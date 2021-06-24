@@ -5,3 +5,6 @@ services:
 
 before_install:
   - docker build -t wendel/docker-react -f Dockerfile.dev .
+
+script: 
+  - docker run -t wendel/docker-react npm run test -- --coverage
