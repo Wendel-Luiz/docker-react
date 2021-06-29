@@ -17,6 +17,7 @@ RUN npm run build
 
 # Segunda fase
 FROM nginx 
+EXPOSE 80
 COPY --from=builder /home/node/app/build /usr/share/nginx/html
 
 # Não precisa iniciar o NGINX pois a imagem já tem como comando padrão iniciar o server
